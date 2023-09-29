@@ -40,13 +40,13 @@ assert lib.assertMsg (!nvidiaPatches) "The option `nvidiaPatches` has been renam
 assert lib.assertMsg (!hidpiXWayland) "The option `hidpiXWayland` has been removed. Please refer https://wiki.hyprland.org/Configuring/XWayland";
 stdenv.mkDerivation (finalAttrs: {
   pname = "hyprland" + lib.optionalString debug "-debug";
-  version = "0.30.0";
+  version = "0.30.0-git";
 
   src = fetchFromGitHub {
     owner = "hyprwm";
     repo = finalAttrs.pname;
-    rev = "v${finalAttrs.version}";
-    hash = "sha256-a0nqm82brOC0QroGOXxcIKxOMAfl9I6pfFOYjCeRzO0=";
+    rev = "3f09b14381e8b28dd2cc1d292763374f2d6c8484";
+    sha256 = "sha256-LLlL4EXxupanb3GwSMcogCCsx7WAfd7/u13QkAwyBgQ=";
   };
 
   patches = [
